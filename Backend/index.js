@@ -1,12 +1,15 @@
 const express = require("express")
 const cors = require("cors")
 const mongo = require("mongoose")
+require("dotenv").config()
 const app = express()
 
-app.use(cors()) // connect one domain to another domain 
+app.use(cors({
+    origin: "*"
+})) // connect one domain to another domain 
 app.use(express.json()) // when data send from cllient side server....
 
-mongo.connect("mongodb://susanta9749:1234@ac-qmhwcd3-shard-00-00.3qzygls.mongodb.net:27017,ac-qmhwcd3-shard-00-01.3qzygls.mongodb.net:27017,ac-qmhwcd3-shard-00-02.3qzygls.mongodb.net:27017/?ssl=true&replicaSet=atlas-yamy8j-shard-0&authSource=admin&appName=Cluster0").then(() => {
+mongo.connect(process.env.MONGO_URL).then(() => {
     console.log("Db connected");
 }).catch((err) => {
     console.log(err);
@@ -60,15 +63,15 @@ app.put("/update/:id", async (req, res) => {
         email: req.body.email,
         number: req.body.number
     })
-     res.json({
+    res.json({
         message: "Done",
         result: result
     })
 
 })
 
-
-app.listen(4500, () => {
+const port = process.env.PORT || 5000
+app.listen(port, () => {
     console.log("Server is running on 4500 port...");
 
 })
