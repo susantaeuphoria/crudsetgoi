@@ -102,15 +102,15 @@ function Create() {
           </div>
 
           {/* Submit */}
-          <button
+          <input
             type="submit"
             className="group mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-3.5 font-bold text-white shadow-lg shadow-indigo-200 transition-all duration-300 hover:-translate-y-1 hover:from-indigo-700 hover:to-purple-700 hover:shadow-xl active:translate-y-0"
-          >
+          />
             Create Account
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
-          </button>
+          
 
         </form>
 

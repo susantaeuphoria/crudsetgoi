@@ -4,9 +4,7 @@ const mongo = require("mongoose")
 require("dotenv").config()
 const app = express()
 
-app.use(cors({
-    origin: "*"
-})) // connect one domain to another domain 
+app.use(cors()) // connect one domain to another domain 
 app.use(express.json()) // when data send from cllient side server....
 
 mongo.connect(process.env.MONGO_URL).then(() => {
