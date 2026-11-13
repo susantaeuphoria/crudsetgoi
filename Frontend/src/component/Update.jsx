@@ -35,7 +35,7 @@ function Update() {
       setsaving(true);
 
       const result = await axios.put(
-        `http://localhost:4500/update/${myid}`,
+        `https://crudsetgoi.onrender.com/update/${myid}`,
         { name, email, number }
       );
 
