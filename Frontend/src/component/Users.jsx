@@ -11,7 +11,7 @@ function Users() {
 
   async function getapi() {
     try {
-      const result = await axios.get("http://localhost:4500/");
+      const result = await axios.get("https://crudsetgoi.onrender.com/");
       setapi(result.data.result || []);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -28,7 +28,7 @@ function Users() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://localhost:4500/delete/${id}`);
+      await axios.delete(`https://crudsetgoi.onrender.com/delete/${id}`);
 
       // Update the UI without reloading the page
       setapi((prev) => prev.filter((user) => user._id !== id));

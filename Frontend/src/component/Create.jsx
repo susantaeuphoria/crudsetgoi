@@ -15,7 +15,7 @@ function Create() {
 
     try {
       const result = await axios.post(
-        "http://localhost:4500/create",
+        "https://crudsetgoi.onrender.com/create",
         { name, email, number }
       );
 

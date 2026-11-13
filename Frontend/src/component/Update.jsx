@@ -15,7 +15,7 @@ function Update() {
   const getData = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:4500/update/${myid}`
+        `https://crudsetgoi.onrender.com/update/${myid}`
       );
 
       setname(result.data.result.name);
